@@ -1,12 +1,25 @@
-- 👋 Hi, I’m @dudarodriguezzs
-- 👀 I’m interested in ...
-- 🌱 I’m currently learning ...
-- 💞️ I’m looking to collaborate on ...
-- 📫 How to reach me ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
+#include <stdio.h>
+#include <string.h>
 
-<!---
-dudarodriguezzs/dudarodriguezzs is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
-You can click the Preview link to take a look at your changes.
---->
+void bubbleSort(char arr[], int n) {
+    for (int i = 0; i < n-1; i++) {
+        for (int j = 0; j < n-i-1; j++) {
+            if (arr[j] > arr[j+1]) {
+                char temp = arr[j];
+                arr[j] = arr[j+1];
+                arr[j+1] = temp;
+            }
+        }
+    }
+}
+
+int main() {
+    char str[100];
+    printf("Digite uma sequência de letras: ");
+    scanf("%s", str);
+
+    bubbleSort(str, strlen(str));
+
+    printf("Letras ordenadas: %s\n", str);
+    return 0;
+}
